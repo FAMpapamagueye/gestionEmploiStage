@@ -1,36 +1,55 @@
-@extends('layouts.app')
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="style.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include the above in your HEAD tag -->
 
-@section('nav')
-<div class="col-sm-6">
-    <h1 class="m-0">Promotions</h1>
-  </div><!-- /.col -->
-  <div class="col-sm-6">
-    <ol class="breadcrumb float-sm-right">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item active">promotion</li>
-    </ol>
-  </div><!-- /.col -->
-@endsection
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="main">
+    
+    
+    <div class="container">
 
-@section('content')
-<section class="content">
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>Promotion 1</h3>
-                <br><br>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="{{ route('departements') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
+<div class="middle">
+      <div id="login">
+
+        <form action="{{ route('login') }}" method="POST" >
+            @csrf
+          <fieldset class="clearfix">
+
+            <p ><span class="fa fa-user">
+                </span><input type="text" name="email" :value="old('email')" required autofocus Placeholder="Username" required>
+            </p> <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fa fa-lock">
+                </span><input type="password" name="password" Placeholder="Password" required>
+            </p> <!-- JS because of IE support; better: placeholder="Password" -->
+            
+             <div>
+                                <span style="width:48%; text-align:left;  display: inline-block;">
+                                    <a class="small-text" href="#">Forgot
+                                password?</a></span>
+                                <span style="width:50%; text-align:right;  display: inline-block;">
+                                    <input type="submit" value="Sign In"></span>
+                            </div>
+
+          </fieldset>
+<div class="clearfix"></div>
+        </form>
+
+        <div class="clearfix"></div>
+
+      </div> <!-- end login -->
+      <div class="logo">LOGO
+          
+          <div class="clearfix"></div>
       </div>
+      
+      </div>
+
     </div>
-</section>
-@endsection
+
+</div>

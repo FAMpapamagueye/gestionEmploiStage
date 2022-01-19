@@ -17,8 +17,8 @@ class CreateStagesTable extends Migration
             $table->id();
             $table->string('poste');
             $table->string('moniteur');
-            $table->date('date_debut');
-            $table->date('date_fin');
+            $table->date('debut');
+            $table->date('fin');
             $table->Integer('entreprise');
             $table->Integer('apprenant');
             $table->timestamps();

@@ -6,8 +6,8 @@
   </div><!-- /.col -->
   <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-      <li class="breadcrumb-item"><a href="{{ route('welcome')}}">Home</a></li>
-      <li class="breadcrumb-item active"><a href="{{ route('welcome')}}">promotion</a></li>
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active"><a href="">promotion</a></li>
       <li class="breadcrumb-item active">département</li>
     </ol>
   </div><!-- /.col -->

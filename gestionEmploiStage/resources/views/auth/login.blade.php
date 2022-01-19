@@ -1,56 +1,55 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="style.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include the above in your HEAD tag -->
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="main">
+    
+    
+    <div class="container">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<div class="middle">
+      <div id="login">
 
-        <form method="POST" action="{{ route('login') }}">
+        <form action="{{ route('login') }}" method="POST" >
             @csrf
+          <fieldset class="clearfix">
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+            <p ><span class="fa fa-user">
+                </span><input type="text" name="email" :value="old('email')" required autofocus Placeholder="Username" required>
+            </p> <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fa fa-lock">
+                </span><input type="password" name="password" Placeholder="Password" required>
+            </p> <!-- JS because of IE support; better: placeholder="Password" -->
+            
+             <div>
+                                <span style="width:48%; text-align:left;  display: inline-block;">
+                                    <a class="small-text" href="#">Forgot
+                                password?</a></span>
+                                <span style="width:50%; text-align:right;  display: inline-block;">
+                                    <input type="submit" value="Sign In"></span>
+                            </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
+          </fieldset>
+<div class="clearfix"></div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+
+        <div class="clearfix"></div>
+
+      </div> <!-- end login -->
+      <div class="logo">LOGO
+          
+          <div class="clearfix"></div>
+      </div>
+      
+      </div>
+
+    </div>
+
+</div>
