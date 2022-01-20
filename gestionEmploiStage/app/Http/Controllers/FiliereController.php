@@ -35,7 +35,7 @@ class FiliereController extends Controller
      */
     public function store(Request $request)
     {
-        $filiere=Filiere::create([
+        Filiere::create([
             'libelle'=>$request->libelle,
             'description'=>$request->description,
         ]);

@@ -2,14 +2,11 @@
 
 use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\StagesController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Livewire\Apprenant;
-// use App\Http\Livewire\Departement;
-// use App\Http\Livewire\Filiere;
-// use App\Http\Livewire\Promotion;
-// // use App\Http\Livewire\Filiere;
 
 
 /*
@@ -27,9 +24,9 @@ Route::get('/', function () {
     return view('welcome.index');
 });
 // // Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // Route::get('/departements', [Departement::class,'render'])->name('departements');
 // /**
@@ -39,9 +36,12 @@ Route::get('/', function () {
 /**
  * Cette route permet d'afficher la liste des etudiants d'une filière
  */
-Route::resource('/departements',DepartementController::class);
-Route::resource('/promos',PromotionController::class);
-Route::resource('/filieres',FiliereController::class);
-Route::resource('/apprenants',ApprenantController::class);
+Route::resource('departements',DepartementController::class);
+Route::resource('promos',PromotionController::class);
+Route::resource('filieres',FiliereController::class);
+Route::resource('apprenants',ApprenantController::class);
+Route::resource('entreprises',EntrepriseController::class);
+Route::resource('stages',StagesController::class);
+
 
 require __DIR__.'/auth.php';

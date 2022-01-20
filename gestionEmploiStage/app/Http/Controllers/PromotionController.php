@@ -14,11 +14,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-          $filiere=Promotion::create([
-            'libelle'=>$request->libelle,
-            'description'=>$request->description,
-        ]);
-        return back();
+        return view('promotion.index');
     }
 
     /**
@@ -39,7 +35,11 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Promotion::create([
+            'libelle'=>$request->libelle,
+            'description'=>$request->description,
+        ]);
+        return back();
     }
 
     /**

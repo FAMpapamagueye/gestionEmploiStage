@@ -23,6 +23,7 @@
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
+
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
@@ -34,13 +35,61 @@
             </p>
           </a>
         </li>
+        <li class="nav-item menu-open " >
+            <i class="nav-icon far fa-circle text-success"></i>
+            <a href="{{route('departements.index') }}" class="btn btn-outline-none" style="hover:red">
+              <p>
+                Departement
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <i class="nav-icon far fa-circle text-success"></i>
+            <a href="{{ route('filieres.index') }}" class="btn btn-outline-none">
+              <p>
+                Filiere
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <i class="nav-icon far fa-circle text-success"></i>
+            <a href="{{ route('entreprises.index') }}" class="btn btn-outline-none">
+             <p>
+                Entrepise
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <i class="nav-icon far fa-circle text-success"></i>
+            <a href="{{ route('promos.index') }}" class="btn btn-outline-none">
+             <p>
+                Promotion
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <i class="nav-icon far fa-circle text-success"></i>
+            <a href="{{ route('stages.index') }}" class="btn btn-outline-none">
+             <p>
+                Stages
+              </p>
+            </a>
+          </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon far fa-circle text-danger"></i>
-            <p class="text">Logout</p>
-          </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                @csrf
+                <div class="nav-link">
+                    <input type="submit" class="form-control" value="Logout">
+
+
+                </div>
+                 </form>
+
         </li>
+
       </ul>
     </nav>
+
     <!-- /.sidebar-menu -->
   </div>

@@ -35,7 +35,7 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-        $departement=Departement::create([
+        Departement::create([
             'libelle'=>$request->libelle,
             'description'=>$request->description,
         ]);

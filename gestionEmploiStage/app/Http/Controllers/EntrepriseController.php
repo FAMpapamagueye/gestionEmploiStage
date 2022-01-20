@@ -35,7 +35,7 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-        $filiere=Entreprise::create([
+        Entreprise::create([
             'libelle'=>$request->libelle,
             'domaine'=>$request->domaine,
         ]);
