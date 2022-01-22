@@ -42,31 +42,31 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('departements.index') }}" class="nav-link">
+                <a href="{{route('departements.index') }}" class="nav-link {{ setMenuActive('departements.index') }}">
                     <i class="nav-icon far fa-circle text-success"></i>
                     <p>Departement</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('filieres.index') }}" class="nav-link">
+                <a href="{{ route('filieres.index') }}" class="nav-link {{ setMenuActive('filieres.index') }}">
                     <i class="nav-icon far fa-circle text-success"></i>
                     <p>Filiere</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('entreprises.index') }}" class="nav-link">
+                <a href="{{ route('entreprises.index') }}" class="nav-link {{ setMenuActive('entreprises.index') }}">
                     <i class="nav-icon far fa-circle text-success"></i>
                     <p>Entrepise</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('promos.index') }}" class="nav-link">
+                <a href="{{ route('promos.index') }}" class="nav-link {{ setMenuActive('promos.index') }}">
                     <i class="nav-icon far fa-circle text-success"></i>
                     <p>Promotion</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('stages.index') }}" class="nav-link">
+                <a href="{{ route('stages.index') }}" class="nav-link {{ setMenuActive('stages.index') }}">
                     <i class="nav-icon far fa-circle text-success"></i>
                     <p>Stages</p>
                 </a>
