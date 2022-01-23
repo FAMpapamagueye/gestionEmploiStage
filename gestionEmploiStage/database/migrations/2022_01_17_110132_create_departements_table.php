@@ -17,7 +17,7 @@ class CreateDepartementsTable extends Migration
             $table->id();
             $table->string('libelle');
             $table->string('description');
-            $table->timestamps();
+            $table->foreignId('promotion_id')->constrained()->onDelete('cascade');
         });
     }
 

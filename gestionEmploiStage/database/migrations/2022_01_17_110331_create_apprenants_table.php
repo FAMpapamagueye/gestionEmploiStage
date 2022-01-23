@@ -18,9 +18,8 @@ class CreateApprenantsTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->date('date_naissance');
-            $table->string('filiere');
-            $table->string('promo');
-            // $table->date('date_naissance');
+            $table->foreignId('filiere_id')->constrained()->onDelete('cascade');
+            $table->foreignId('promotion_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

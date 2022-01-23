@@ -17,7 +17,7 @@ class CreateFilieresTable extends Migration
             $table->id();
             $table->string('libelle');
             $table->string('description');
-            $table->timestamps();
+            $table->foreignId('departement_id')->constrained()->onDelete('cascade');
         });
     }
 
