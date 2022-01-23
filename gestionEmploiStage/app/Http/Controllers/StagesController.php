@@ -35,8 +35,13 @@ class StagesController extends Controller
      */
     public function store(Request $request)
     {
-        $entreprise=Stages::create([
+        Stages::create([
             'poste'=>$request->poste,
+            'moniteur'=>$request->moniteur,
+            'debut'=>$request->debut,
+            'fin'=>$request->fin,
+            'entreprise'=>$request->entrepise,
+            'apprenant'=>$request->apprenant,
         ]);
     }
 
