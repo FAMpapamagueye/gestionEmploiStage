@@ -1,7 +1,10 @@
 require('./bootstrap');
 
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();
+import "admin-lte/plugins/jquery/jquery"
+import "admin-lte/dist/js/adminlte"
+import "admin-lte/plugins/bootstrap/js/bootstrap.bundle"
