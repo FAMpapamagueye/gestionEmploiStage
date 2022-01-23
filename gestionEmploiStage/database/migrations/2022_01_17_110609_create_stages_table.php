@@ -19,8 +19,8 @@ class CreateStagesTable extends Migration
             $table->string('moniteur');
             $table->date('debut');
             $table->date('fin');
-            $table->Integer('entreprise');
-            $table->Integer('apprenant');
+            $table->foreignId('entreprise_id')->constrained()->onDelete('cascade');
+            $table->foreignId('apprenant_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
