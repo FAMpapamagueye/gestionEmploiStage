@@ -1,4 +1,8 @@
 <div>
-    <h1>Bonjour</h1>
-    @include('livewire.apprenants.liste')
+    @if($isBtnAddClicked)
+        @include('livewire.apprenants.create')
+    @else
+        @include('livewire.apprenants.liste')
+    @endif
+
 </div>

@@ -7,6 +7,7 @@
 
             <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        @livewireStyles
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
@@ -71,6 +72,7 @@
         <!-- ./wrapper -->
 
         <script src="{{ asset('js/app.js') }}"></script>
+        @livewireScripts
     </body>
 </html>
 
