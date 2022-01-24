@@ -14,10 +14,20 @@ class Apprenants extends Component
     protected $paginationTheme = 'bootstrap';
     public $newApprenant = [];
     public $isBtnAddClicked = false;
+
+    protected $rules = [
+        'newApprenant.nom' => 'required',
+        'newApprenant.prenom' => 'required',
+        'newApprenant.sexe' => 'required',
+        'newApprenant.date_naissance' => 'required',
+        'newApprenant.filiere_id' => 'required',
+        'newApprenant.promotion_id' => 'required',
+    ];
+
     public function render()
     {
         return view('livewire.apprenants.index', [
-            'apprenants' => Apprenant::paginate(5),
+            'apprenants' => Apprenant::latest()->paginate(5),
             'filieres' => Filiere::all(),
             'promotions' => Promotion::all()
         ])->extends('layouts.app')
@@ -36,6 +46,10 @@ class Apprenants extends Component
 
     public function addApprenant()
     {
-        dump($this->newApprenant);
+        $validationAttributes = $this->validate();
+        Apprenant::create($validationAttributes['newApprenant']);
+        $this->newApprenant = [];
+
+        $this->dispatchBrowserEvent('showSuccessMessage', ['message' => 'Apprenant créé avec succès!']);
     }
 }
