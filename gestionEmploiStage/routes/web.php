@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\ApprenantController;
-use App\Http\Controllers\DepartementController;
-use App\Http\Controllers\EntrepriseController;
-use App\Http\Controllers\FiliereController;
-use App\Http\Controllers\PromotionController;
-use App\Http\Controllers\StagesController;
+use App\Http\Livewire\Apprenants;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StagesController;
+use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\ApprenantController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\EntrepriseController;
+use App\Http\Controllers\DepartementController;
 
 
 /*
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome.index');
 });
+
+Route::get('/accueil', Apprenants::class)->name('accueil');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

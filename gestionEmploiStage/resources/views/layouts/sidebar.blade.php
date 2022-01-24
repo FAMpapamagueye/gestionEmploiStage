@@ -26,7 +26,7 @@
 
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="" class="nav-link  ">
+                <a href="{{ route('accueil') }}" class="nav-link  ">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                     Accueil
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('dashboard') }}" class="nav-link {{ setMenuActive('dashboard') }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Tableau de bord

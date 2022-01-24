@@ -48,12 +48,6 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
-                        <div class="row">
-                                {{-- First Bon --}}
-                        </div>
-                        <div class="row">
-                            {{-- Second Bon --}}
-                        </div>
                         @yield('content')
                     </div><!-- /.container-fluid -->
                 </section>
