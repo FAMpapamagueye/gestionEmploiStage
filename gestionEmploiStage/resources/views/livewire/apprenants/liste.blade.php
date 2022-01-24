@@ -25,6 +25,7 @@
                 <th style="width : 25%;" class="text-center">Apprenants</th>
                 <th style="width : 20%;" class="text-center">Filiere</th>
                 <th style="width : 30%;" class="text-center">Promotion</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
