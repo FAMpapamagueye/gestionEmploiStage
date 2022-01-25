@@ -24,10 +24,26 @@ class Apprenants extends Component
         'newApprenant.promotion_id' => 'required',
     ];
 
+    public $promotionFilters = [];
+    public $filiereFilters = [];
     public function render()
     {
+
+        $this->promotionFilters = array_filter($this->promotionFilters, function($val) {
+            return $val !== false;
+        });
+
+        $this->filiereFilters = array_filter($this->filiereFilters, function($val) {
+            return $val !== false;
+        });
+
         return view('livewire.apprenants.index', [
-            'apprenants' => Apprenant::latest()->paginate(5),
+            'apprenants' => (empty($this->promotionFilters))
+                ? Apprenant::all() :
+                // ((empty($this->filiereFilters))
+                    Apprenant::whereIn('promotion_id', array_keys($this->promotionFilters))->get(),
+                        // : Apprenant::whereIn('filiere_id', array_keys($this->filiereFilters))->get()),
+
             'filieres' => Filiere::all(),
             'promotions' => Promotion::all()
         ])->extends('layouts.app')
