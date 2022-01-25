@@ -42,7 +42,7 @@
                                 <td class="text-center"><span class="tag tag-success">Promotion {{ $apprenant->promotion->libelle }}</span></td>
                                 <td class="text-center">
                                     <button class="btn btn-link"><i class="far fa-edit"></i></button>
-                                    <button class="btn btn-link"><i class="far fa-trash-alt"></i></button>
+                                    <button class="btn btn-link"><i class="far fa-trash-alt" wire:click="confirmDelete('{{ $apprenant->prenom }} {{ $apprenant->nom }}', {{ $apprenant->id }})"></i></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -78,7 +78,38 @@
                     <br><br>
                 @endforeach
             </div>
-        
+
 
     </div>
 </div>
+
+<script>
+    window.addEventListener('showConfirmMessage', event=>{
+        Swal.fire({
+        title: event.detail.message.title,
+        text: event.detail.message.text,
+        icon: event.detail.message.type,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Continuer',
+        cancelButtonText: 'Annuler'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            @this.deleteApprenant(event.detail.message.data.user_id)
+        }
+        })
+    })
+
+
+    window.addEventListener('showSuccessMessage', event=>{
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: event.detail.message || 'Opération effectuée evec succès',
+            showConfirmButton: false,
+            timer: 3000
+            }
+        )
+    })
+</script>
