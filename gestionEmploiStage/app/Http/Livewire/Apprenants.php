@@ -68,7 +68,7 @@ class Apprenants extends Component
 
         $this->dispatchBrowserEvent('showSuccessMessage', ['message' => 'Apprenant créé avec succès!']);
     }
-<<<<<<< HEAD
+
 
 
     public function confirmDelete($name, $id)
@@ -82,13 +82,11 @@ class Apprenants extends Component
             ]
             ]
         ]);
-    } 
+    }
 
     public function deleteApprenant($id)
     {
         Apprenant::destroy($id);
         $this->dispatchBrowserEvent('showSuccessMessage', ['message' => 'Apprenant supprimé avec succès!']);
     }
-=======
->>>>>>> test1
 }
