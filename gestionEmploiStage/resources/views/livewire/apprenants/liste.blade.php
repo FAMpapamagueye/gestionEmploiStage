@@ -42,7 +42,11 @@
                                 <td class="text-center"><span class="tag tag-success">Promotion {{ $apprenant->promotion->libelle }}</span></td>
                                 <td class="text-center">
                                     <button class="btn btn-link"><i class="far fa-edit"></i></button>
+<<<<<<< HEAD
                                     <button class="btn btn-link"><i class="far fa-trash-alt" wire:click="confirmDelete('{{ $apprenant->prenom }} {{ $apprenant->nom }}', {{ $apprenant->id }})"></i></button>
+=======
+                                    <button class="btn btn-link"><i class="far fa-trash-alt"></i></button>
+>>>>>>> test1
                                 </td>
                             </tr>
                         @endforeach
@@ -78,6 +82,7 @@
                     <br><br>
                 @endforeach
             </div>
+<<<<<<< HEAD
 
 
     </div>
@@ -113,3 +118,9 @@
         )
     })
 </script>
+=======
+        
+
+    </div>
+</div>
+>>>>>>> test1
