@@ -82,7 +82,7 @@ class Apprenants extends Component
             ]
             ]
         ]);
-    }
+    } 
 
     public function deleteApprenant($id)
     {
