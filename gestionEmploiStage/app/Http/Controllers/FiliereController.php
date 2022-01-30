@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Filiere;
+use App\Models\Apprenant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FiliereController extends Controller
 {
@@ -12,8 +14,28 @@ class FiliereController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $IdApprenant = [];
     public function index()
     {
+
+        $filieres = Filiere::all();
+
+        foreach($filieres as $filiere)
+        {
+
+            // return $filiere->id;
+            foreach(Apprenant::all() as $apprenants)
+            {
+                if($apprenants->filiere_id == $filiere->id)
+                {
+                    array_push($this->IdApprenant, count(DB::table('apprenants')->where('filiere_id', $filiere->id)->get()));
+                    break;
+                }
+            }
+
+        }
+
+        // return $this->IdApprenant;
         return view('filieres.index');
     }
 
